@@ -1,0 +1,406 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+  line-height: 1.5;
+}
+
+:root {
+  --text-bg-color: #2c8589;
+  --grey-color: #d1d1d1;
+  --dark-grey:#2e2e2e;
+  --white:#fff;
+  --border-radius:5px;
+  --border-radisa-r: 0 5px 5px 0;
+  --border-radius-bottom: 0 0 5px 5px;
+}
+
+
+
+
+/* <!--================== main logo / nav ==============--> */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 120px;
+  background: var(--dark-grey);
+}
+
+header h1 {
+  color:var(--white);
+  background-color: var(--text-bg-color);
+  padding: 5px 10px 5px 120px;
+  margin: 0 0 0 -120px;
+  border-radius: var(--border-radisa-r);
+  cursor: pointer;
+}
+
+nav ul li {
+  list-style: none;
+  display:inline-block;
+}
+
+nav li a {
+  font-size: 20px;
+  text-decoration: none;
+  color:var(--white);
+  margin: 0 10px;
+  position: relative;
+  align-items: center;
+}
+
+nav li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background-color: currentColor;
+  transform: scaleX(0.2);
+  transform-origin: left;
+  transition: transform 250ms ease-in;
+}
+
+nav li a:hover::after {
+  transform: scaleX(1);
+  color: var(--text-bg-color);
+
+}
+
+
+
+
+/* <!--============= hero banner --> */
+
+
+.hero-banner {
+  background-image: url(https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+  height: 30vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-banner h2 { 
+  font-size: 2rem;
+  color: var(--white);
+  background-color: var(--text-bg-color);
+  position: absolute;
+  right: 100px;
+  bottom: 10px;
+  margin: 20px 5px;
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+}
+
+
+
+
+/* <!--=============  Work history --> */
+
+.page-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.page-section {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  margin:  80px 0;
+  gap:20px;
+}
+
+.page-section h2 {
+  font-size: 40px;
+  text-align: right;
+  border-right: 3px solid var(--text-bg-color);
+  padding-right: 40px;
+  margin: 5px;
+  color: var(--text-bg-color);
+}
+
+
+.portfolio {
+  display: grid;
+  height: 750px;
+  width: 100%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 25% 25%;
+  grid-template-areas: 
+            " portfolio-1 portfolio-1 " 
+            " portfolio-2 portfolio-3 " 
+            " portfolio-4 run-buddy " 
+            ;
+  
+}
+
+.portfolio > div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  margin: 10px;
+  opacity: 0.7;
+  box-shadow: 3px 3px 10px var(--dark-grey) ;
+  border-radius:var(--border-radius);
+}
+
+.portfolio > div:hover {
+  opacity: 1;
+}
+
+
+.portfolio-1 {
+  grid-area: portfolio-1;
+  background-image: url(../images/02-portfolio-4.jpg);
+  position: relative;
+
+
+}
+.portfolio-2 {
+  grid-area: portfolio-2;
+  background-image: url(../images/02-portfolio-1.jpg);
+  position: relative;
+
+}
+.portfolio-3 {
+  grid-area: portfolio-3;
+  background-image: url(../images/02-portfolio-2.jpg);
+  position: relative;
+
+}
+.portfolio-4 {
+  grid-area: portfolio-4;
+  background-image: url(../images/02-portfolio-3.jpg);
+  position: relative;
+
+}
+.run-buddy {
+  grid-area: run-buddy;
+  background-image: url(../images/02-run-buddy.jpg); 
+  position: relative;
+
+}
+
+
+.box-titles {
+  background-color: var(--dark-grey);
+  padding: 10px;
+  position: absolute;
+  color: var(--white);
+  bottom: 20px;
+  border-radius: var(--border-radisa-r);
+}
+
+.box-titles h4 {
+  margin: 0;
+  font-size: 1.5rem;
+
+}
+.box-titles h6 {
+  margin: 0;
+  font-size: .5rem;
+
+}
+
+
+
+
+/* --------=============  Contacts --------- */
+
+.contact {
+  align-items: center;
+}
+
+.contact ul li {
+  list-style: none;
+  display:inline-block;
+}
+
+.contact li a {
+  font-size: 20px;
+  text-decoration: none;
+  color:var(--text-bg-color);
+  position: relative;
+  margin-right: 40px;
+}
+
+.contact li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: -10px;
+  height: 3px;
+  background-color: currentColor;
+  transform: scaleX(0.2);
+  transform-origin: center;
+  transition: transform 250ms ease-in;
+
+}
+.contact li a:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+/* -----------=================- Break Point -==================------------ */
+
+/* ------------ Media Query ------------- */
+
+
+@media only screen and (max-width: 1000px) {
+
+  header {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 20px 0;
+    margin: 0;
+  }
+  
+  header h1 {
+    padding: 5px 20px;
+    margin: 0  auto;
+    border-radius: var(--border-radius-bottom);
+  }
+  
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  padding: 0;
+}
+nav ul li a {
+  margin: 10px 40px;
+}
+
+.page-section h2 {
+  font-size: 25px;
+  padding-right: 20px;
+}
+
+
+/* ---------- work ----------- */
+
+.portfolio {
+  height: 1000px;
+  grid-template-columns: 100%;
+  grid-template-rows: 34% 16.5% 16.5% 16.5% 16.5%;
+  grid-template-areas: 
+            " portfolio-1 " 
+            " portfolio-2 " 
+            " portfolio-3 " 
+            " portfolio-4 "  
+            " run-buddy " 
+            ;
+  
+}
+
+/* ---------- Contacts ----------- */
+
+
+.contact ul a {
+  line-height: 3;
+  margin: 0;
+  padding: 0px;
+}
+
+}
+
+
+
+
+
+/* -----------=================- Break Point -==================------------ */
+
+/* ------------ Media Query ------------- */
+
+@media only screen and (max-width: 500px) {
+
+  header {
+    padding: 0;
+  }
+  
+  header h1 {
+    margin: 0 0 0 -20px;
+    padding-left:60px ;
+    border-radius: none;
+  }
+  nav {
+    display: block;
+  }
+  nav ul li {
+  display: block;
+  margin: 20px 0;
+}
+
+/* ---------- Hero Section ----------- */
+
+.hero-banner {
+}
+
+
+.hero-banner h2 {
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  bottom: 50px;
+  right: 50px;
+}
+
+
+/* ---------- work ----------- */
+
+
+.page-wrapper {
+  width: 90%;
+}
+
+.page-section {
+  grid-template-columns: 100%;
+  gap: 10px;
+  margin:  0 auto;
+  align-items: center;
+}
+
+.page-section h2 {
+  border-right: none;
+  border-bottom: solid 2px var(--dark-grey);
+  text-align: center;
+  padding: 20px 5px 0 5px;
+}
+
+.portfolio {
+  height: 1000px;
+  grid-template-rows: 20% 20% 20% 20% 20% ;
+}
+
+.contact ul {
+  margin-left: 0;
+}
+
+.contact ul li {
+   display: block;
+}
+
+.contact ul a {
+  margin: 5px;
+
+}
+
+}
+
+
+/* ------------------------------------------ */
